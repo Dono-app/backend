@@ -38,7 +38,7 @@ public class Listing {
 
         this.imageName = name;
         this.img = img;
-        this.listingName = listingName;       
+        this.listingName = listingName;
         this.categoryId = categoryId;
         this.location = location;
         this.rating = rating;
@@ -78,6 +78,7 @@ public class Listing {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
     /**
      * @return the listingName
      */

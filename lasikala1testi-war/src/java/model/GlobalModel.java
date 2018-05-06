@@ -18,18 +18,11 @@ import org.json.simple.JSONObject;
 public class GlobalModel {
 
     private final List<Listing> listi = new ArrayList();
-
+    
+    
+    
     private GlobalModel() {
 
-    }
-
-    public boolean itemExists(String name) {
-        for (Listing item : this.listi) {
-            if (item.getImageName().equals(name)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public String getListSize() {
@@ -44,14 +37,7 @@ public class GlobalModel {
     public static GlobalModel getInstance() {
         return GlobalModelHolder.INSTANCE;
     }
-
-    public void editListing(Listing list, String name) {
-        Listing itemi = new Listing(name);
-        //todo: validate
-        itemi.setImageName("perkele");
-        itemi.setName(list.getEmail());
-        listi.add(itemi);
-    }
+    
 
     public String getAllListings() {
 
@@ -77,21 +63,6 @@ public class GlobalModel {
 
         }
         return jsonArray.toJSONString();
-    }
-
-    public void deleteOrderById(String imageName) {
-        for (Listing item : this.listi) {
-            if (item.getImageName().equals(imageName)) {
-                listi.remove(imageName);
-                listi.remove(item.getImg());
-                listi.remove(item.getCategoryId());
-                listi.remove(item.getListingName());
-                listi.remove(item.getLocation());
-                listi.remove(item.getDescription());
-                listi.remove(item.getRating());
-                listi.remove(item.getEmail());
-            }
-        }
     }
 
     private static class GlobalModelHolder {
